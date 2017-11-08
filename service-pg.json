@@ -3,18 +3,18 @@
     "metadata": {
         "labels": {
             "external": "true",
-            "${NS_HASH}": "${PG_DEPLOY_NAME}-${PG_DEPLOY_HASH}"
+            "{{.NS_SELECTOR}}": "{{.PG_DEPLOY_NAME}}-{{.PG_DEPLOY_HASH}}"
         },
-        "name": "${PG_SVC_NAME}-${PG_SVC_HASH}"
+        "name": "{{.PG_SVC_NAME}}-{{.PG_SVC_HASH}}"
     },
     "spec": {
         "selector": {
-            "${NS_HASH}": "${PG_DEPLOY_NAME}-${PG_DEPLOY_HASH}"
+            "{{.NS_SELECTOR}}": "{{.PG_DEPLOY_NAME}}-{{.PG_DEPLOY_HASH}}"
         },
         "ports": [
             {
                 "protocol": "TCP",
-                "targetPort": ${PG_PORT}
+                "targetPort": {{.PG_PORT}}
             }
         ]
     }

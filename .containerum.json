@@ -1,0 +1,23 @@
+{
+  "env": {
+    "IMAGE": "postgres",
+    "PORT": "5432",
+    "NAME": "solution-pg",
+    "USER": "postgres",
+    "DATA": "/pgdata",
+    "HASH": "{{rand_string 5}}",
+    "PASSWORD": "{{rand_string 10}}",
+    "CPU": "500m",
+    "RAM": "512Mi"
+  },
+  "run":[
+    {
+      "type": "deployment",
+      "config_file": "deploy.json"
+    },
+    {
+      "type": "service",
+      "config_file": "service.json"
+    }  
+  ]
+}

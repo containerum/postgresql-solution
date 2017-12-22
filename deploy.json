@@ -1,0 +1,57 @@
+{
+  "kind": "Deployment",
+  "metadata": {
+    "name": "{{.NAME}}-{{.HASH}}"
+  },
+  "spec": {
+    "replicas": 1,
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "{{.NAME}}-{{.HASH}}"
+        },
+        "name": "{{.NAME}}-{{.HASH}}"
+      },
+      "spec": {
+        "containers": [
+          {
+            "env": [
+              {
+                "name": "POSTGRES_USER",
+                "value": "{{.USER}}"
+              },
+              {
+                "name": "POSTGRES_PASSWORD",
+                "value": "{{.PASSWORD}}"
+              },
+              {
+                "name": "PGDATA",
+                "value": "{{.DATA}}"
+              }
+           ],
+            "image": "{{.IMAGE}}",
+            "name": "{{.NAME}}",
+            "resources": {
+              "requests": {
+                "cpu": "{{.CPU}}",
+                "memory": "{{.RAM}}"
+              }
+            },
+            "volumeMounts": [
+              {
+                "mountPath": "{{.ATA}}",
+                "name": "{{.VOLUME}}",
+                "subPath": "{{.NAME}}-{{.HASH}}{{.DATA}}"
+              }
+            ]
+          }
+        ],
+        "volumes": [
+          {
+            "name": "{{.VOLUME}}"
+          }
+        ]
+      }
+    }
+  }
+}

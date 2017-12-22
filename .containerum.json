@@ -1,0 +1,25 @@
+{
+  "env": {
+    "PG_IMAGE": "postgres",
+    "PG_PORT": "5432",
+    "PG_DEPLOY_NAME": "solution-pg",
+    "PG_SVC_NAME": "solution-pg-svc",
+    "POSTGRES_USER": "postgres",
+    "PGDATA": "/pgdata",
+    "PG_DEPLOY_HASH": "{{rand_string 5}}",
+    "PG_SVC_HASH": "{{rand_string 5}}",
+    "POSTGRES_PASSWORD": "{{rand_string 10}}",
+    "REQUEST_CPU": "500m",
+    "REQUEST_MEMORY": "512Mi"
+  },
+  "run":[
+    {
+      "type": "deployment",
+      "config_file": "deploy-pg.json"
+    },
+    {
+      "type": "service",
+      "config_file": "service-pg.json"
+    }  
+  ]
+}

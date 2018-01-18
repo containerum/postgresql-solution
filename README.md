@@ -14,6 +14,9 @@ To launch this solution on Containerum.com sign up with the service, download an
 ```
 chkit solution run containerum/postgresql-solution -e USER=maria -e PASSWORD=12345678 -e NAME=pg
 ```
+* PASSWORD - password of database,
+* USER - database user,
+* NAME - name of deploy ana service
 
 2. Make sure that the Solution is running:
 

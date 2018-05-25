@@ -2,7 +2,7 @@
     "name": "{{.NAME}}-{{.HASH}}",
     "deploy": "{{.NAME}}-{{.HASH}}",
     "ports": [{
-        "name": "webpack",
+        "name": "postgres",
         "target_port": {{.PORT}},
         "protocol": "TCP"
         }]

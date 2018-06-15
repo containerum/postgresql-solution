@@ -5,7 +5,7 @@
     "NAME": "solution-pg",
     "USER": "postgres",
     "DATA": "/pgdata",
-    "HASH": "{{rand_string 5}}",
+    "HASH": "{{rand_string_minus 5}}",
     "PASSWORD": "{{rand_string 10}}",
     "CPU": "500",
     "RAM": "512"

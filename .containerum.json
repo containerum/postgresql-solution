@@ -7,8 +7,8 @@
     "DATA": "/pgdata",
     "HASH": "{{rand_string_minus 5}}",
     "PASSWORD": "{{rand_string 10}}",
-    "CPU": "500",
-    "RAM": "512"
+    "CPU": "100",
+    "RAM": "128"
   },
   "run":[
     {

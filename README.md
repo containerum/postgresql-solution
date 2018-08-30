@@ -38,5 +38,3 @@ $ chkit get svc
 +----------------+----------------+----------+-------------------+----------------+-----+
 ```
 4. Open your data management tool, e.g. Valentina Studio, and connect to `x2.containerum.io:33577`- now you can create or manage your DB.
-
-![](gif/pgsln.gif)
